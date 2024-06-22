@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Scheduling</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Scheduling System</h1>
+        <form id="employee-form">
+            <h2>Enter Employee Names</h2>
+            <div id="employee-names">
+                <div>
+                    <label for="emp_0">Employee 1:</label>
+                    <input type="text" id="emp_0" name="emp_0" required>
+                </div>
+                <div>
+                    <label for="emp_1">Employee 2:</label>
+                    <input type="text" id="emp_1" name="emp_1" required>
+                </div>
+            </div>
+            <button type="button" onclick="addEmployeeField()">Add Another Employee</button>
+            <button type="submit">Save Employees</button>
+        </form>
+
+        <form id="scheduling-form" style="display:none;">
+            <h2>Generate Schedule</h2>
+            <label for="num-full-time">Number of Full-Time Employees:</label>
+            <input type="number" id="num-full-time" name="num-full-time" required>
+            
+            <label for="num-part-time">Number of Part-Time Employees:</label>
+            <input type="number" id="num-part-time" name="num-part-time" required>
+            
+            <label for="min-wage">Current Minimum Wage:</label>
+            <input type="number" id="min-wage" name="min-wage" step="0.01" required>
+            
+            <label for="increase-rate">Annual Increase Rate (%):</label>
+            <input type="number" id="increase-rate" name="increase-rate" step="0.01" required>
+            
+            <button type="submit">Generate Schedule</button>
+        </form>
+        <div id="schedule-output"></div>
+
+        <h2>Update Schedule Based on Store Events</h2>
+        <form id="event-form">
+            <label for="store-event">Describe the Event:</label>
+            <textarea id="store-event" name="store-event" rows="4" required></textarea>
+            <button type="submit">Submit Event</button>
+        </form>
+        <div id="event-feedback"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
